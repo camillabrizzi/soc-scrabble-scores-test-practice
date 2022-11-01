@@ -3,12 +3,19 @@
   "version": "0.0.1",
   "description": "Simple codebase for trying TDD",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "cypress:open": "cypress open",
+    "dev": "nodemon scrabble-score.js",
+    "start": "node scrabble-score.js"
   },
   "type": "module",
   "author": "Rob Styles",
   "license": "ISC",
   "dependencies": {
     "jest": "^29.2.1"
+  },
+  "devDependencies": {
+    "cypress": "^10.11.0",
+    "nodemon": "^2.0.20"
   }
 }
