@@ -4,20 +4,32 @@ import { calculateScrabbleScore } from "./scrabble-score";
 // https://jestjs.io/docs/using-matchers
 
 //ticket 1
+let word = "";
+const calculateScore = calculateScrabbleScore(word);
 
-test("checks calculateScrabbleScore when A is passed in the number 1 is returned", () => {
+test("checks calculateScrabbleScore when a letter is passed in the correct number is returned", () => {
   let word = "";
   const calculateScore = calculateScrabbleScore(word);
-  if (word === "A" || word === "E") {
+  if (word === "A" || word === "E" || word === "I" || word === "L") {
     expect(calculateScore.toBe(1));
-  } else if (word === "B" || word === "C") {
-    expect(calculateScore.toBe(3));
-  } else if (word === "D" || word === "G") {
+  } if (word === "D" || word === "G") {
     expect(calculateScore.toBe(2));
-  } else if (word === "F") {
+  } if (word === "B" || word === "C" || word === "M") {
+    expect(calculateScore.toBe(3));
+  } if (word === "F" || word === "H") {
     expect(calculateScore.toBe(4));
+  } if (word === "J") {
+    expect(calculateScore.toBe(8));
+  } if ( word === "K") {
+    expect(calculateScore.toBe(5));
   }
 });
+
+test("checks calculateScrabbleScore when a letter is passed in the correct number is returned", () => {
+  let word = "";
+  const calculateScore = calculateScrabbleScore(word);
+  if (word === "M"){
+    expect(calculateScore.toBe(1));
 
 // test("checks calculateScrabbleScore when B is passed in the number 3 is returned", () => {
 //   const actual = calculateScrabbleScore("B");
