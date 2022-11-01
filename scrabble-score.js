@@ -1,33 +1,33 @@
 export function calculateScrabbleScore(word) {
   let score = 0;
-  for (let i = 0; i < word.length; i++) {
+  for (let char of word) {
     if (
-      word[i] === "A" ||
-      word[i] === "E" ||
-      word[i] === "I" ||
-      word[i] === "L" ||
-      word[i] === "N" ||
-      word[i] === "O" ||
-      word[i] === "R" ||
-      word[i] === "S" ||
-      word[i] === "T" ||
-      word[i] === "U"
+      char === "A" ||
+      char === "E" ||
+      char === "I" ||
+      char === "L" ||
+      char === "N" ||
+      char === "O" ||
+      char === "R" ||
+      char === "S" ||
+      char === "T" ||
+      char === "U"
     )
       score += 1;
-    if (word[i] === "D" || word[i] === "G") score += 2;
-    if (word[i] === "B" || word[i] === "C" || word[i] === "M" || word[i] === "P") score += 3;
+    if (char === "D" || char === "G") score += 2;
+    if (char === "B" || char === "C" || char === "M" || char === "P") score += 3;
     if (
-      word[i] === "F" ||
-      word[i] === "H" ||
-      word[i] === "V" ||
-      word[i] === "W" ||
-      word[i] === "Y"
+      char === "F" ||
+      char === "H" ||
+      char === "V" ||
+      char === "W" ||
+      char === "Y"
     )
       score += 4;
   
-    if (word[i] === "J" || word[i] === "X") score += 8;
-    if (word[i] === "K") score += 5;
-    if (word[i] === "Q" || word[i] === "Z") score += 10;
+    if (char === "J" || char === "X") score += 8;
+    if (char === "K") score += 5;
+    if (char === "Q" || char === "Z") score += 10;
   
   }
   
