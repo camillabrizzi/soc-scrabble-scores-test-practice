@@ -65,14 +65,15 @@ const scrabbleLetters = {
 
 export function calculateScrabbleScore(word) {
   let score = 0;
-  for (let char of word) {
+  if (word.length >= 7) score += 50 // bonus
+  for (let char of word.toUpperCase()) {
     for (let letter in scrabbleLetters) {
       if (char === letter) score += scrabbleLetters[letter]
+      else if (!char.match(/[A-Z]/)) throw new Error("Make sure you only use capital letters A-Z")
     }
   }
   return score;
 }
 
-calculateScrabbleScore("CAR")
 
 //this refactored version passed all tests!
