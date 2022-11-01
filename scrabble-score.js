@@ -1,9 +1,32 @@
 export function calculateScrabbleScore(word) {
-  if (word === "A" || word === "E" || word === "I" || word === "L") return 1;
-  if (word === "D" || word === "G") return 2;
-  if (word === "B" || word === "C" || word === "M") return 3;
-  if (word === "F" || word === "H") return 4;
-  if (word === "J") return 8;
-  if (word === "K") return 5;
- 
+  let score = 0;
+  if (
+    word === "A" ||
+    word === "E" ||
+    word === "I" ||
+    word === "L" ||
+    word === "N" ||
+    word === "O" ||
+    word === "R" ||
+    word === "S" ||
+    word === "T" ||
+    word === "U"
+  )
+    score += 1;
+  if (word === "D" || word === "G") score += 2;
+  if (word === "B" || word === "C" || word === "M" || word === "P") score += 3;
+  if (
+    word === "F" ||
+    word === "H" ||
+    word === "V" ||
+    word === "W" ||
+    word === "Y"
+  )
+    score += 4;
+
+  if (word === "J" || word === "X") score += 8;
+  if (word === "K") score += 5;
+  if (word === "Q" || word === "Z") score += 10;
+
+  return score;
 }
